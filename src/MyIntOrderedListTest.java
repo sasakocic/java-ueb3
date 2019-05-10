@@ -26,7 +26,9 @@ class MyIntOrderedListTest {
         list.insert(3);
         Assertions.assertEquals("{3}", list.toString());
         list.insert(1);
-//        Assertions.assertEquals("{1, 3}", list.toString());
+        Assertions.assertEquals("{1, 3}", list.toString());
+        list.insert(2);
+        Assertions.assertEquals("{1, 2, 3}", list.toString());
     }
 
     @Test

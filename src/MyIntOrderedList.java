@@ -12,6 +12,9 @@ public class MyIntOrderedList {
         MyIntListElement newE = new MyIntListElement(key, null);
         if (head == null) {
             head = newE;
+        } else if (newE.compare(head) < 0) {
+            newE.setNext(head);
+            head = newE;
         } else {
             current = findAppropriate(head, key);
             newE.setNext(current.getNext());

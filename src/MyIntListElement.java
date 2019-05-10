@@ -1,10 +1,5 @@
 //package ueb3;
 
-
-/**
- *
- * @author werner, braun (IFIS)
- */
 public class MyIntListElement {
 
     private int key;
