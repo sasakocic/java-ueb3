@@ -8,7 +8,6 @@ public class MyIntOrderedList {
     }
 
     public void insert(int key) {
-        MyIntListElement current = head;
         MyIntListElement newE = new MyIntListElement(key, null);
         if (head == null) {
             head = newE;
@@ -16,17 +15,13 @@ public class MyIntOrderedList {
             newE.setNext(head);
             head = newE;
         } else {
-            current = findAppropriate(head, key);
+            MyIntListElement current = head;
+            while (current.getNext() != null && current.getNext().compare(newE) < 0) {
+                current = current.getNext();
+            }
             newE.setNext(current.getNext());
             current.setNext(newE);
         }
-    }
-
-    public MyIntListElement findAppropriate(MyIntListElement h, int k) {
-        while (h.getNext() != null && h.getNext().compare(new MyIntListElement(k, null)) < 0) {
-            h = h.getNext();
-        }
-        return h;
     }
 
     public MyIntListElement findLast(MyIntListElement h) {
